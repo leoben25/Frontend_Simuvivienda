@@ -1,0 +1,70 @@
+<header>
+  <div class="header-left">
+    <img src="assets/logo.jpg" class="logo-small" />
+    <span>SimuVivienda</span>
+  </div>
+  <nav>
+    <a routerLink="/home">Inicio</a>
+    <a routerLink="/simulator">Simulador</a>
+    <a routerLink="/help">Ayuda</a>
+  </nav>
+</header>
+
+<main class="content-box">
+  <h2>Simulador de Crédito Mivivienda</h2>
+
+  <div class="form-grid">
+    <div>
+      <label>Precio de vivienda</label>
+      <input type="number" [(ngModel)]="precio" />
+    </div>
+    <div>
+      <label>Tipo de tasa</label>
+      <select [(ngModel)]="tasa">
+        <option [value]="0.09">Fija (9%)</option>
+        <option [value]="0.08">Variable (8%)</option>
+      </select>
+    </div>
+    <div>
+      <label>Plazo (años)</label>
+      <select [(ngModel)]="plazo">
+        <option *ngFor="let y of [5,10,15,20]" [value]="y">{{ y }}</option>
+      </select>
+    </div>
+    <div>
+      <label>Bono del Estado</label>
+      <input type="number" [(ngModel)]="bono" />
+    </div>
+  </div>
+
+  <button (click)="calcularSimulacion()">Calcular plan de pagos</button>
+
+  <section *ngIf="cuota">
+    <h3>Resumen del Crédito</h3>
+    <p><strong>Cuota mensual:</strong> S/. {{ cuota | number:'1.2-2' }}</p>
+    <p><strong>Monto financiado:</strong> S/. {{ monto | number:'1.2-2' }}</p>
+    <p><strong>Plazo:</strong> {{ plazo }} años ({{ n }} meses)</p>
+
+    <canvas id="graficoIntereses"></canvas>
+
+    <table id="tablaHistorial">
+      <thead>
+        <tr>
+          <th>N°</th><th>Saldo inicial</th><th>Interés</th>
+          <th>Amortización</th><th>Cuota</th><th>Saldo final</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of historial">
+          <td>{{ r.i }}</td>
+          <td>{{ r.saldo }}</td>
+          <td>{{ r.interes }}</td>
+          <td>{{ r.amort }}</td>
+          <td>{{ r.cuota }}</td>
+          <td>{{ r.saldoFinal }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+

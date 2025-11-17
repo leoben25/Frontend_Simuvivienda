@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #dbeaf9;
+}
+
+.hidden { display: none; }
+
+header {
+  background-color: #1769aa;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo-small {
+  width: 35px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === LOGIN === */
+.login-box {
+  background: #fff;
+  width: 400px;
+  margin: 120px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #1769aa;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #0e4d84;
+}
+
+/* === CONTENIDO === */
+.content-box {
+  background: white;
+  width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #1769aa;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* === RESULTADOS === */
+.results #graficoIntereses {
+  margin-top: 30px;
+  background: #f8fbff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#tablaHistorial {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+#tablaHistorial th, #tablaHistorial td {
+  border: 1px solid #d1e1f5;
+  padding: 8px;
+  text-align: center;
+}
+
+#tablaHistorial th {
+  background-color: #1769aa;
+  color: white;
+}
+
+#tablaHistorial tr:nth-child(even) {
+  background-color: #f5f8fc;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+details {
+  background: #f5f8fc;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+  border: 1px solid #d3e4f7;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+/* You can add global styles to this file, and also import other style files */

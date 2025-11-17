@@ -1,0 +1,14 @@
+<div class="login-box">
+  <div class="login-header">
+    <img src="assets/logo.jpg" class="logo" alt="SimuVivienda" />
+    <h1>SimuVivienda</h1>
+  </div>
+
+  <h2>Iniciar sesión</h2>
+  <input type="email" [(ngModel)]="email" placeholder="Correo electrónico" />
+  <input type="password" [(ngModel)]="password" placeholder="Contraseña" />
+  <a class="forgot">¿Olvidaste tu contraseña?</a>
+  <button (click)="login()">Iniciar Sesión</button>
+  <p>¿No tienes cuenta? <a>Registrarse</a></p>
+</div>
+
